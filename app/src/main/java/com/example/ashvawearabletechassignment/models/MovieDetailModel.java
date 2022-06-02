@@ -1,5 +1,6 @@
-package com.example.ashvawearabletechassignment;
+package com.example.ashvawearabletechassignment.models;
 
+import com.example.ashvawearabletechassignment.models.GenreModel;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
@@ -16,18 +17,18 @@ public class MovieDetailModel implements Serializable {
     private ArrayList<GenreModel> genres;
     @SerializedName("homepage")
     private String homepage;
-    @SerializedName("backdrop_path")
-    private String posterPath;
+    @SerializedName("original_language")
+    private String originalLanguage;
     @SerializedName("revenue")
     private String revenue;
-    @SerializedName("tagline")
-    private String tagline;
+    @SerializedName("runtime")
+    private String runTime;
     @SerializedName("vote_average")
     private String voteAverage;
     @SerializedName("vote_count")
     private String voteCount;
-    @SerializedName("status")
-    private String status;
+    @SerializedName("backdrop_path")
+    private String backdropPath;
     @SerializedName("release_date")
     private String releaseDate;
     @SerializedName("overview")
@@ -40,18 +41,18 @@ public class MovieDetailModel implements Serializable {
         this.budget = budget;
         this.genres = genres;
         this.homepage = homepage;
-        this.posterPath = posterPath;
+        this.originalLanguage = posterPath;
         this.revenue = revenue;
-        this.tagline = tagline;
+        this.runTime = tagline;
         this.voteAverage = voteAverage;
         this.voteCount = voteCount;
-        this.status = status;
+        this.backdropPath = status;
         this.releaseDate = releaseDate;
         this.overView = overView;
     }
 
-    public MovieDetailModel(String posterPath,String adult,String voteAverage,String title,String overView){
-        this.posterPath = posterPath;
+    public MovieDetailModel(String posterPath, String adult, String voteAverage, String title, String overView) {
+        this.originalLanguage = posterPath;
         this.adult = adult;
         this.voteAverage = voteAverage;
         this.title = title;
@@ -98,12 +99,12 @@ public class MovieDetailModel implements Serializable {
         this.homepage = homepage;
     }
 
-    public String getPosterPath() {
-        return posterPath;
+    public String getOriginalLanguage() {
+        return originalLanguage;
     }
 
-    public void setPosterPath(String posterPath) {
-        this.posterPath = posterPath;
+    public void setOriginalLanguage(String originalLanguage) {
+        this.originalLanguage = originalLanguage;
     }
 
     public String getRevenue() {
@@ -114,12 +115,12 @@ public class MovieDetailModel implements Serializable {
         this.revenue = revenue;
     }
 
-    public String getTagline() {
-        return tagline;
+    public String getRunTime() {
+        return runTime;
     }
 
-    public void setTagline(String tagline) {
-        this.tagline = tagline;
+    public void setRunTime(String runTime) {
+        this.runTime = runTime;
     }
 
     public String getVoteAverage() {
@@ -138,12 +139,12 @@ public class MovieDetailModel implements Serializable {
         this.voteCount = voteCount;
     }
 
-    public String getStatus() {
-        return status;
+    public String getBackdropPath() {
+        return backdropPath;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setBackdropPath(String backdropPath) {
+        this.backdropPath = backdropPath;
     }
 
     public String getReleaseDate() {

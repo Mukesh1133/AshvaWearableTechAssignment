@@ -1,4 +1,6 @@
-package com.example.ashvawearabletechassignment;
+package com.example.ashvawearabletechassignment.remote;
+
+import com.example.ashvawearabletechassignment.models.MovieDetailModel;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

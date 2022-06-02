@@ -1,4 +1,4 @@
-package com.example.ashvawearabletechassignment;
+package com.example.ashvawearabletechassignment.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
+import com.example.ashvawearabletechassignment.R;
+import com.example.ashvawearabletechassignment.models.MovieListModel;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -29,7 +31,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
     @Override
     public MovieDetailViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.movies_list, parent, false);
+        View view = layoutInflater.inflate(R.layout.item_movie, parent, false);
         return new MovieDetailViewHolder(view);
     }
 
@@ -41,14 +43,14 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
         holder.txtReleaseDate.setText(movieDetails.get(position).getReleaseDate());
 
         String imagePath = movieDetails.get(position).getPosterPath();
-        String url = String.format("https://image.tmdb.org/t/p/w780/%s",imagePath);
-        Glide.with(context).load(url).into(holder.imgPoster);
+        String url = String.format("https://image.tmdb.org/t/p/w780/%s", imagePath);
+        Picasso.get().load(url).into(holder.imgPoster);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, MovieDetailsActivity.class).putExtra("ID", movieDetails.get(position).getId());
+                Intent intent = new Intent(context, MovieDetailsActivity.class).putExtra("ID", movieDetails.get(holder.getAdapterPosition()).getId());
                 context.startActivity(intent);
             }
         });

@@ -1,4 +1,4 @@
-package com.example.ashvawearabletechassignment;
+package com.example.ashvawearabletechassignment.models;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -35,6 +35,7 @@ public class MovieListModel implements Serializable {
     public String getId() {
         return id;
     }
+
     public void setId(String id) {
         id = id;
     }

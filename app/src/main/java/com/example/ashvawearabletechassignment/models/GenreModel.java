@@ -1,4 +1,4 @@
-package com.example.ashvawearabletechassignment;
+package com.example.ashvawearabletechassignment.models;
 
 public class GenreModel {
     String name;

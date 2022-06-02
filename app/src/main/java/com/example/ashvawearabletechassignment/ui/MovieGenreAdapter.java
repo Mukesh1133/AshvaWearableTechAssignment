@@ -1,37 +1,39 @@
-package com.example.ashvawearabletechassignment;
+package com.example.ashvawearabletechassignment.ui;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ashvawearabletechassignment.R;
+import com.example.ashvawearabletechassignment.models.GenreModel;
+
 import java.util.ArrayList;
 
-public class MovieDetailAdapter extends RecyclerView.Adapter<MovieDetailAdapter.MovieDetailViewHolder> {
+public class MovieGenreAdapter extends RecyclerView.Adapter<MovieGenreAdapter.MovieDetailViewHolder> {
 
-   ArrayList<GenreModel> genreModels;
-   Context context;
+    ArrayList<GenreModel> genreModels;
+    Context context;
 
-    public MovieDetailAdapter(ArrayList<GenreModel> genreModels, Context context) {
+    public MovieGenreAdapter(ArrayList<GenreModel> genreModels, Context context) {
         this.genreModels = genreModels;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public MovieDetailAdapter.MovieDetailViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MovieGenreAdapter.MovieDetailViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.movie_genre,parent,false);
+        View view = layoutInflater.inflate(R.layout.item_movie_genre, parent, false);
         return new MovieDetailViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MovieDetailAdapter.MovieDetailViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MovieGenreAdapter.MovieDetailViewHolder holder, int position) {
         holder.txtGenre.setText(genreModels.get(position).getName());
 
     }
@@ -43,7 +45,8 @@ public class MovieDetailAdapter extends RecyclerView.Adapter<MovieDetailAdapter.
 
     public class MovieDetailViewHolder extends RecyclerView.ViewHolder {
 
-            TextView txtGenre;
+        TextView txtGenre;
+
         public MovieDetailViewHolder(@NonNull View itemView) {
             super(itemView);
 

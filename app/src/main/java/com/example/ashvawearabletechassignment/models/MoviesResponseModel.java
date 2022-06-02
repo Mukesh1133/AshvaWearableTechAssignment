@@ -1,4 +1,4 @@
-package com.example.ashvawearabletechassignment;
+package com.example.ashvawearabletechassignment.models;
 
 import java.io.Serializable;
 import java.util.List;
@@ -7,7 +7,7 @@ public class MoviesResponseModel implements Serializable {
 
     private int page;
 
-    private List<MovieListModel> results ;
+    private List<MovieListModel> results;
 
     public MoviesResponseModel(int date, List<MovieListModel> movieDetailsList) {
         this.page = date;
